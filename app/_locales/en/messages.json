@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "fes",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Fetlife Enhancement Suite",
+    "description": "The description of the application"
+  }
+}
