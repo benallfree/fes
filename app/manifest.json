@@ -1,37 +1,37 @@
 {
   "name": "Fetlife Enhancement Suite (FES)",
-  "permissions": [
-    "storage"
-  ],
+  
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "A series of enhancements to make Fetlife a little more kinky.",
-  "icons": {
-    "16": "images/icon-16.png",
-    "128": "images/icon-128.png"
-  },
+  
   "default_locale": "en",
+  
   "background": {
     "scripts": [
       "scripts/chromereload.js",
-      "scripts/background.js"
+      "scripts/background.js",
+      "scripts/events.js"
     ]
   },
-  "options_page": "options.html",
-  "omnibox": {
-    "keyword": "fes"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": [
-        "scripts/contentscript.js"
-      ],
+  
+  
+	"content_scripts": [
+		{
+			"matches": ["*://fetlife.com/*"],
+			"js": ["app.js"],
       "run_at": "document_end",
-      "all_frames": false
+      "all_frames": false    
+		}
+	], 
+  
+  "browser_action": {
+    "default_title": "Fetlife Enhancement Suite (FES)",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "19": "images/icon-128-disabled.png"
     }
-  ]
+  },
+  
+  "options_page": "options.html"
 }
